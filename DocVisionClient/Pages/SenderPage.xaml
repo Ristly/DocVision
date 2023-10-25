@@ -1,0 +1,37 @@
+﻿<Page x:Class="DocVisionClient.SenderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DocVisionClient"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SenderPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="168*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="659*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Название" />
+        <TextBlock Grid.Row="2" Text="Дата"  />
+        <TextBlock Grid.Row="1" Text="Адресат"  />
+        <TextBlock Grid.Row="3" Text="Отправитель"  />
+        <TextBlock Grid.Row="4" Text="Cодержание" />
+
+        <TextBox Name="TitleBox" Grid.Column="1" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Name="AddresseeBox"  Grid.Row="1" Grid.Column="1" Text="{Binding Addressee, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Name="SenderBox"  Grid.Row="3" Grid.Column="1"  Text="{Binding Sender, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Name="ContentBox"  Grid.Row="4" Grid.Column="1" Text="{Binding Content, UpdateSourceTrigger=PropertyChanged}" />
+
+        <DatePicker Name="DateCalendar" Grid.Row="2" Grid.Column="1" Margin="10,10,10,10" SelectedDate="{Binding SendDate, UpdateSourceTrigger=PropertyChanged}"/>
+
+    </Grid>
+</Page>
